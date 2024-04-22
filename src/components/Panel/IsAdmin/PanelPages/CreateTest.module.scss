@@ -1,0 +1,78 @@
+.wrapperRootTest {
+	display: flex;
+	position: absolute;
+	flex-direction: row-reverse;
+	top: 150px;
+	left: 20%;
+	justify-content: center;
+
+	.wrapperCreaterTest {
+		display: flex;
+		padding: 10px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: #ffffffad;
+		border-radius: 20px;
+		.nameTest {
+			display: flex;
+		}
+	}
+	.listQuestion {
+		background-color: #ffffffad;
+		border-radius: 20px;
+		margin-left: 10px;
+		padding: 10px;
+	}
+}
+.wrapperPrevAndNext {
+	display: flex;
+	justify-content: center;
+}
+.btnStyle {
+	margin-top: 10px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 10px;
+	max-width: 210px;
+	padding: 5px 10px 5px 10px;
+	background: rgb(214, 96, 204);
+	background: linear-gradient(
+		90deg,
+		rgba(214, 96, 204, 1) 0%,
+		rgba(159, 76, 235, 1) 100%
+	);
+}
+.btnStyleReverse {
+	&:first-of-type {
+		margin-left: 0px;
+	}
+	margin-top: 10px;
+	margin-left: 10px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 10px;
+	max-width: 210px;
+	padding: 5px 10px 5px 10px;
+	background: rgb(108, 138, 213);
+	background: linear-gradient(
+		90deg,
+		rgba(108, 138, 213, 1) 0%,
+		rgba(159, 76, 235, 1) 100%
+	);
+}
+.labelStyle {
+	color: rgb(214, 96, 204);
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.5rem;
+}
+.InputTest {
+	background-color: #fff;
+	border-radius: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #263a7a;
+}

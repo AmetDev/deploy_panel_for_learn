@@ -1,0 +1,54 @@
+.wrapperOurTeacher {
+	display: flex;
+	align-items: center;
+	div {
+		div {
+			display: flex;
+			width: 250px;
+
+			flex-direction: row;
+			div {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+
+		display: flex;
+		justify-content: space-between;
+		width: 97%;
+		background-color: #fff;
+		border-radius: 10px;
+		padding: 5px;
+		button {
+			width: 100px;
+
+			background: rgb(214, 96, 204);
+			background: linear-gradient(
+				90deg,
+				rgba(214, 96, 204, 1) 0%,
+				rgba(159, 76, 235, 1) 100%
+			);
+			color: #fff;
+			font-weight: 600;
+			padding: 5px 10px 5px 10px;
+			border-radius: 10px;
+		}
+	}
+	width: 70vw;
+	height: 100px;
+	background-color: #ffffffaf;
+	border-radius: 20px;
+}
+.wrapperOur {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	div {
+		img {
+			background-color: #727272;
+			padding: 5px;
+			border-radius: 5px;
+		}
+	}
+}

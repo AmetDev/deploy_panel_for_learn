@@ -1,0 +1,13 @@
+.wrapperPanelTeacher .wrapperPanelInfo {
+  position: absolute;
+  right: 0;
+  width: 80vw;
+}
+.wrapperPanelTeacher .wrapperPanelAdmin {
+  position: relative;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=TeacherPanel.module.css.map */

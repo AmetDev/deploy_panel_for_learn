@@ -1,0 +1,37 @@
+.btnPanel {
+  margin: 15px 0px 15px 20px;
+  display: flex;
+  justify-content: flex-start;
+  width: 190px;
+}
+.btnPanel span {
+  margin-left: 10px;
+  color: #d660cc;
+}
+
+.wrapperPanel {
+  margin-top: 20px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.795);
+  max-width: 247px;
+  height: 488px;
+  border-radius: 20px;
+}
+.wrapperPanel .wrapperIcon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 150px;
+  margin-left: 15px;
+  margin-top: 10px;
+  color: #2d3748;
+}
+.wrapperPanel .wrapperIcon span {
+  font-size: 14px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}/*# sourceMappingURL=PanelAdmin.module.css.map */

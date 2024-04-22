@@ -1,0 +1,74 @@
+.testPage {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	h2 {
+		margin: 5px;
+	}
+	h3 {
+		margin: 10px;
+	}
+
+	.arrQuestions {
+		.ListQuestion {
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+			text-align: center;
+			li {
+				background-color: #ffffffb0;
+				border-radius: 10px;
+				padding: 10px;
+				margin: 15px;
+			}
+			img {
+				border-radius: 10px;
+				background-color: #fff;
+				padding: 5px;
+			}
+		}
+	}
+}
+.isCorrectly {
+	margin: 10px;
+	background: rgb(200, 255, 181);
+	background: linear-gradient(
+		90deg,
+		rgba(200, 255, 181, 1) 0%,
+		rgba(79, 210, 58, 1) 100%
+	);
+	color: #fff;
+	font-weight: 600;
+	padding: 5px;
+	border-radius: 5px;
+}
+.isError {
+	margin: 10px;
+	color: #fff;
+	font-weight: 600;
+	padding: 5px;
+	border-radius: 5px;
+	background: rgb(248, 188, 163);
+	background: linear-gradient(
+		90deg,
+		rgba(248, 188, 163, 1) 0%,
+		rgba(255, 66, 25, 1) 100%
+	);
+}
+.btnStyle {
+	margin-top: 10px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 10px;
+	max-width: 210px;
+	padding: 5px 10px 5px 10px;
+	background: rgb(214, 96, 204);
+	background: linear-gradient(
+		90deg,
+		rgba(214, 96, 204, 1) 0%,
+		rgba(159, 76, 235, 1) 100%
+	);
+	margin: 0 auto;
+}

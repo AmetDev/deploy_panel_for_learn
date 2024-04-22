@@ -1,0 +1,24 @@
+.wrapperAddStudent {
+	background-color: #ffffffb9;
+	width: 60vw;
+	border-radius: 10px;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.uuidWrapper {
+		background: rgb(38, 58, 122);
+		background: linear-gradient(
+			90deg,
+			rgba(38, 58, 122, 1) 0%,
+			rgba(70, 106, 224, 1) 100%
+		);
+		color: #fff;
+		width: 20vw;
+		padding: 5px;
+		border-radius: 5px;
+		font-weight: 600;
+		font-size: 16px;
+		margin-top: 10px;
+	}
+}

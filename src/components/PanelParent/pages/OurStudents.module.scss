@@ -1,0 +1,44 @@
+.wrapperOurStudents {
+	display: flex;
+
+	position: absolute;
+	left: 360px;
+	top: 150px;
+	.wrapperElementStudent {
+		display: flex;
+		width: 65vw;
+		position: relative;
+		background-color: #ffffffa1;
+		border-radius: 10px;
+		padding: 5px;
+
+		div {
+			display: flex;
+
+			img {
+				background-color: #ffff;
+				padding: 5px;
+				border-radius: 5px;
+				margin-right: 5px;
+			}
+			div {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+
+				&:last-child {
+					margin-top: 2px;
+					span {
+						font-size: 16px;
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+}
+.btnDelete {
+	position: absolute;
+	left: 96%;
+	top: 25%;
+}

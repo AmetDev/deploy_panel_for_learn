@@ -1,0 +1,28 @@
+.PanelTeacher {
+  position: absolute;
+  top: 150px;
+  left: 22vw;
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+}
+.PanelTeacher div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.PanelTeacher div div {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.PanelTeacher div div .wrapperTtitleAndButton {
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+  flex-direction: row;
+}/*# sourceMappingURL=PanelTeacher.module.css.map */

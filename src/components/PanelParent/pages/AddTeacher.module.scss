@@ -1,0 +1,43 @@
+.wrapperDisplayTeacher {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffffffc0;
+	border-radius: 15px;
+	padding: 10px;
+	width: 65vw;
+	flex-direction: column;
+	span {
+		font-size: 18px;
+		font-weight: 600;
+	}
+	div {
+		input {
+			background: rgb(38, 58, 122);
+			background: linear-gradient(
+				90deg,
+				rgba(38, 58, 122, 1) 0%,
+				rgba(70, 106, 224, 1) 100%
+			);
+			color: #fff;
+			border-radius: 5px;
+			padding: 5px;
+			margin: 5px;
+			width: 25vw;
+		}
+		button {
+			width: 200px;
+
+			background: rgb(214, 96, 204);
+			background: linear-gradient(
+				90deg,
+				rgba(214, 96, 204, 1) 0%,
+				rgba(159, 76, 235, 1) 100%
+			);
+			color: #fff;
+			font-weight: 600;
+			padding: 5px 10px 5px 10px;
+			border-radius: 10px;
+		}
+	}
+}

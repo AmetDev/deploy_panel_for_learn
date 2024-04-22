@@ -1,0 +1,23 @@
+.fullDataPageWrapper {
+  display: flex;
+  position: absolute;
+  margin: 0 auto;
+  top: 150px;
+  width: 60vw;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.662745098);
+}
+.fullDataPageWrapper button {
+  width: 200px;
+  margin: 0 auto;
+  position: relative;
+  top: 40px;
+  margin-top: 20px;
+  background: rgb(214, 96, 204);
+  background: linear-gradient(90deg, rgb(214, 96, 204) 0%, rgb(159, 76, 235) 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+}/*# sourceMappingURL=FullDataPage.module.css.map */
