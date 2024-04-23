@@ -104,7 +104,7 @@ const OurTeacher = () => {
 					</div>
 					<button
 						onClick={() => {
-							let isClicked = alert('Вы действительно хотите удалить?')
+							let isClicked = confirm('Вы действительно хотите удалить?')
 							if (isClicked) {
 								deleteTeacher()
 							}

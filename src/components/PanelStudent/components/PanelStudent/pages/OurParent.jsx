@@ -97,10 +97,7 @@ const OurParent = () => {
 					</div>
 					<button
 						onClick={() => {
-							let isClicked = alert('Вы действительно хотите удалить?')
-							if (isClicked) {
-								deleteTeacher()
-							}
+							deleteTeacher()
 						}}
 					>
 						удалить
