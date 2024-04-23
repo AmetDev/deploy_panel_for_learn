@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Popup from 'reactjs-popup'
 import { v4 as uuidv4 } from 'uuid'
+import AlignRight from '../../../../assets/panelAdmin/adminicons/ALignRight'
 import AddIcon from '../../../../assets/panelAdmin/adminicons/AddIcon'
 import AlignCenter from '../../../../assets/panelAdmin/adminicons/AlignCenter'
 import AlignLeft from '../../../../assets/panelAdmin/adminicons/AlignLeft'
-import AlignRight from '../../../../assets/panelAdmin/adminicons/ALignRight'
 import BIcon from '../../../../assets/panelAdmin/adminicons/BIcon'
 import ImageIcon from '../../../../assets/panelAdmin/adminicons/ImageIcon.jsx'
 import ItalicIcon from '../../../../assets/panelAdmin/adminicons/ItalicIcon'
@@ -75,7 +75,7 @@ const CreateLesson = () => {
 		return (
 			<Interweave
 				content={`<img style="max-width:100%, height: auto;" src=${
-					`http://localhost:4444` + `${imageUrl}`
+					`${__VALUE__}` + `${imageUrl}`
 				} width="150" height"auto"  alt="name"/>`}
 			/>
 		)

@@ -1,0 +1,45 @@
+.wrapperTestLanding {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	font-weight: 600;
+
+	color: #d660cc;
+	ul {
+		background-color: #ffffffb4;
+		padding: 15px;
+		border-radius: 10px;
+		width: 25vw;
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			width: 20vw;
+			display: flex;
+			justify-content: space-between;
+
+			background-color: #fff;
+			padding: 5px;
+			border-radius: 8px;
+			margin: 10px;
+			list-style-type: circle;
+		}
+	}
+}
+.btnStyle {
+	margin-top: 10px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 10px;
+	max-width: 210px;
+	padding: 5px 10px 5px 10px;
+	background: rgb(214, 96, 204);
+	background: linear-gradient(
+		90deg,
+		rgba(214, 96, 204, 1) 0%,
+		rgba(159, 76, 235, 1) 100%
+	);
+	margin: 0 auto;
+}

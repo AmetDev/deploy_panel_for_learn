@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './PanelAdmin.module.scss'
 
+import Cookies from 'js-cookie'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import day from '../../../assets/day.svg'
 import addChild from '../../../assets/panelAdmin/addChild.svg'
 import addChild2 from '../../../assets/panelAdmin/addChild2.svg'
@@ -17,6 +19,7 @@ import { setPage } from '../../../redux/slices/SelectedPageTeacherSlice'
 
 const PanelAdmin = () => {
 	const dispatch = useDispatch()
+	const [isDeleted, setIsDeleted] = useState(false)
 	const initialState = [
 		{ icon: home, icon2: home2, label: 'Панель учителя', state: false },
 
@@ -42,7 +45,16 @@ const PanelAdmin = () => {
 	const { pages } = useSelector(state => state.teacherSelectedPage)
 	const { me, status } = useSelector(state => state.fetchUser)
 
-	console.log(me)
+	useEffect(() => {
+		if (isDeleted) {
+			setButtons(initialState)
+			setSelectedButton(null)
+		}
+	}, [isDeleted])
+
+	const deleteUser = () => {
+		Cookies.remove('token')
+	}
 
 	return (
 		<div className={style.wrapperPanel}>
@@ -71,6 +83,11 @@ const PanelAdmin = () => {
 					<span>{button.label}</span>
 				</button>
 			))}
+			<button onClick={deleteUser}>
+				<Link style={{ color: '#d660cc' }} to='/login'>
+					Выход
+				</Link>
+			</button>
 		</div>
 	)
 }

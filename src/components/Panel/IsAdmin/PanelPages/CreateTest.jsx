@@ -11,6 +11,7 @@ const CreateTest = () => {
 	const [questions, setQuestions] = useState([
 		{ question: '', answers: [{ image: null, isCorrect: false }] },
 	])
+
 	const dispatch = useDispatch()
 	const [allTest, setAllTest] = useState({})
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -82,7 +83,7 @@ const CreateTest = () => {
 			questions: questions,
 		}
 
-		setAllTest(test)
+		addQuestionInServer(test.testName, teacherUUID, test.questions)
 	}
 	useEffect(() => {
 		const fetchMe2 = async () => {
@@ -95,8 +96,8 @@ const CreateTest = () => {
 					},
 				})
 				console.log('Fetched data:', data) // Добавьте
+				setTeacherUUID(data._id)
 
-				addQuestionInServer(allTest.testName, data._id, allTest.questions)
 				return data
 			} catch (error) {
 				return error
@@ -126,6 +127,7 @@ const CreateTest = () => {
 			}
 		} catch (error) {
 			console.log(error)
+			alert('произошла ошибка', error)
 		}
 	}
 

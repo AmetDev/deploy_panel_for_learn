@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import deleteIcon from '../../../../../assets/panelAdmin/adminicons/deleteicon.svg'
 import { __VALUE__ } from '../../../../../conf.js'
 import { setPages } from '../../../../../redux/slices/FetchLessonSlice'
-import style from '../TestPage.module.scss'
+import style from './TestPage.module.scss'
 
 const TestList = () => {
 	const navigate = useNavigate()
