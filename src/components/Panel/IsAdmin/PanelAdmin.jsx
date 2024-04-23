@@ -54,6 +54,7 @@ const PanelAdmin = () => {
 
 	const deleteUser = () => {
 		Cookies.remove('token')
+		location.reload()
 	}
 
 	return (

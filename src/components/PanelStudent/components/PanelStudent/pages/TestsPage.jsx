@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { __VALUE__ } from '../../../../../conf.js'
 import { setPages } from '../../../../../redux/slices/FetchLessonSlice'
-import style from '../../../../Panel/IsAdmin/PanelPages/TestPage.module.scss'
+import style from '../../../../Panel/IsAdmin/PanelPages/TeststPage/TestPage.module.scss'
 
 const TestListStudent = () => {
 	const navigate = useNavigate()

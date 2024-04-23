@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import style from './PanelAdmin.module.scss'
 
+import Cookies from 'js-cookie'
 import { useDispatch, useSelector } from 'react-redux'
 import day from '../../../../assets/day.svg'
 import addChild from '../../../../assets/panelAdmin/addChild.svg'
@@ -76,6 +77,15 @@ const StudentPanelBtn = () => {
 					<span>{button.label}</span>
 				</button>
 			))}
+			<button
+				style={{ color: '#d660cc' }}
+				onClick={() => {
+					Cookies.remove('token')
+					location.reload()
+				}}
+			>
+				Выход
+			</button>
 		</div>
 	)
 }

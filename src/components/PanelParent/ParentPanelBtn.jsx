@@ -10,6 +10,8 @@ import childs2 from '../../assets/panelAdmin/childs2.svg'
 import home from '../../assets/panelAdmin/home.svg'
 import home2 from '../../assets/panelAdmin/home2.svg'
 
+import Cookies from 'js-cookie'
+import { Link } from 'react-router-dom'
 import { setPageParent } from '../../redux/slices/SelectedPageParentSlice.js'
 
 const ParentPanelBtn = () => {
@@ -63,6 +65,15 @@ const ParentPanelBtn = () => {
 					<span>{button.label}</span>
 				</button>
 			))}
+			<button
+				style={{ color: '#d660cc' }}
+				onClick={() => {
+					Cookies.remove('token')
+					location.reload()
+				}}
+			>
+				<Link to='/login'>Выход</Link>
+			</button>
 		</div>
 	)
 }
