@@ -96,6 +96,10 @@ const Login = () => {
 				{status === 'error' && (
 					<p className={style.errorText}>Неверный логин или пароль!</p>
 				)}
+				<button className={style.btnStyle} type='button'>
+					<a href='https://preschoolers.vercel.app/'>Выйти</a>
+				</button>
+
 				{me && me.typeUser === 'teacher' && me.isTeacher && (
 					<Navigate to='/TeacherPanel' />
 				)}
