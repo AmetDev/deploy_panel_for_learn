@@ -10,6 +10,7 @@ const TestDetailStudent = () => {
 
 	const data1 = useParams()
 	const [test, setTest] = useState(null)
+	const [length, setLength] = useState(0)
 	useEffect(() => {
 		const fetchOneTest = async () => {
 			try {
@@ -28,6 +29,7 @@ const TestDetailStudent = () => {
 					},
 				})
 				setTest(data)
+				setLength(data.questions.length)
 				console.log('id', data)
 			} catch (error) {
 				console.log(error)
@@ -37,8 +39,11 @@ const TestDetailStudent = () => {
 	}, [])
 
 	const [selectedAnswers, setSelectedAnswers] = useState({})
+	const [clickedUL, setClickedUL] = useState({})
 
 	const handleAnswerSelect = (questionId, answerId, isCorrect) => {
+		if (clickedUL[questionId]) return
+
 		setSelectedAnswers({
 			...selectedAnswers,
 			[questionId]: {
@@ -47,6 +52,14 @@ const TestDetailStudent = () => {
 			},
 		})
 	}
+
+	const handleClickUL = questionId => {
+		setClickedUL({
+			...clickedUL,
+			[questionId]: true,
+		})
+	}
+
 	console.log('test', test)
 	{
 		return (
@@ -55,11 +68,14 @@ const TestDetailStudent = () => {
 					<h2>{test.testName}</h2>
 					{/* <p>Teacher UUID: {test.Teacher_uuid}</p> */}
 
-					{test.questions.map(question => (
-						<div className={style.arrQuestions} key={question._id}>
+					{test.questions.map((question, index) => (
+						<div className={style.arrQuestions} key={index}>
 							<h3>{question.question}</h3>
 
-							<ul className={style.ListQuestion}>
+							<ul
+								className={style.ListQuestion}
+								onClick={() => handleClickUL(question._id)}
+							>
 								{question.answers.map(answer => (
 									<li
 										key={answer._id}
