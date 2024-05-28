@@ -72,3 +72,66 @@
 	);
 	margin: 0 auto;
 }
+.selectedAnswer {
+	border: 2px solid yellow;
+}
+
+.isCorrectly {
+	color: green;
+}
+
+.isError {
+	color: red;
+}
+
+.btnFinish {
+	background-color: blue;
+	color: white;
+	padding: 10px 20px;
+	margin-top: 20px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	width: 200px;
+
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.btnFinish:hover {
+	background-color: darkblue;
+}
+
+.results {
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+}
+.resultIsDoneWrapper {
+	display: flex;
+	justify-items: center;
+	flex-direction: column;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	.wrapperBlock {
+		background-color: #fff;
+		padding: 5px;
+		margin: 3px;
+		border-radius: 8px;
+		span {
+			&:first-of-type {
+				color: rgb(214, 96, 204);
+				font-weight: 600;
+				font-size: 24px;
+			}
+			&:last-of-type {
+				color: rgba(159, 76, 235, 1);
+				font-weight: 600;
+				font-size: 24px;
+			}
+		}
+	}
+}
