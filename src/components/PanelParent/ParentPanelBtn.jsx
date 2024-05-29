@@ -9,7 +9,8 @@ import childs from '../../assets/panelAdmin/childs.svg'
 import childs2 from '../../assets/panelAdmin/childs2.svg'
 import home from '../../assets/panelAdmin/home.svg'
 import home2 from '../../assets/panelAdmin/home2.svg'
-
+import chart from '../../assets/panelAdmin/chart.svg'
+import chart2 from '../../assets/panelAdmin/chart2.svg'
 import Cookies from 'js-cookie'
 import { Link } from 'react-router-dom'
 import { setPageParent } from '../../redux/slices/SelectedPageParentSlice.js'
@@ -26,6 +27,7 @@ const ParentPanelBtn = () => {
 			label: 'Добавить ребенка',
 			state: false,
 		},
+{ icon:  chart , icon2:  chart2, label: 'Статистика', state: false },
 	]
 
 	const [buttons, setButtons] = useState(initialState)
