@@ -1,7 +1,9 @@
 .wrapperOurStudents {
 	display: flex;
-
 	position: absolute;
+	justify-content: center;
+	flex-direction: column;
+
 	left: 25%;
 	top: 150px;
 	.wrapperElementStudent {
@@ -11,10 +13,11 @@
 		background-color: #ffffffa1;
 		border-radius: 10px;
 		padding: 5px;
+		flex-direction: column;
 
 		div {
 			display: flex;
-
+			margin-bottom: 5px;
 			img {
 				background-color: #ffff;
 				padding: 5px;

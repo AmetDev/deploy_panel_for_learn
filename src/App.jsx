@@ -4,6 +4,7 @@ import MainLayouts from './Layouts/MainLayouts'
 import PrivateRoute from './Layouts/PrivateRoute'
 import Login from './components/Login/Login'
 import FullDataPage from './components/Panel/IsAdmin/PanelPages/PanelTeacher/[PanelTeacherId]/FullDataPage'
+import StatisStudent from './components/Panel/IsAdmin/PanelPages/PanelTeacher/[StatisStudentId]/StatisStudent'
 import TestList from './components/Panel/IsAdmin/PanelPages/TeststPage/TestsPage'
 import TestDetail from './components/Panel/IsAdmin/PanelPages/TeststPage/[TestId]/Test'
 import MainPageParent from './components/PanelParent/MainPageParent'
@@ -32,6 +33,7 @@ function App() {
 				</Route>
 				<Route element={<PrivateRoute />}>
 					<Route path='/TeacherPanel' element={<MainLayouts />} />
+					<Route path='/student_stat/:id' element={<StatisStudent />} />
 					<Route path='/TeacherPanel/tests' element={<TestList />} />
 					<Route path='/TeacherPanel/tests/:id' element={<TestDetail />} />
 				</Route>

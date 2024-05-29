@@ -8,7 +8,7 @@ import { __VALUE__ } from '../../../../../conf.js'
 import {
 	fetchPages,
 	setPages,
-} from '../../../../../redux/slices/FetchLessonSlice'
+} from '../../../../../redux/slices/FetchLessonSlice.js'
 import style from './PanelTeacher.module.scss'
 
 const PanelTeacher = () => {

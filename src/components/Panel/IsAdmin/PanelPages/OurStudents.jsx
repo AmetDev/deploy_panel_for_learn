@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import user from '../../../../assets/user.png'
 import { __VALUE__ } from '../../../../conf.js'
 import style from './OurStudents.module.scss'
@@ -16,7 +17,7 @@ const OurStudents = () => {
 						Authorization: `Bearer ${token}`,
 					},
 				})
-				console.log(data2.data._id)
+
 				const { data } = await axios.get(`${__VALUE__}/auth_student/students`, {
 					params: {
 						Teacher_uuid: data2.data._id,
@@ -45,12 +46,14 @@ const OurStudents = () => {
 							<div key={element._id}>
 								<img src={user} width={'50px'} height={'50px'} alt='' />
 								<div>
-									<div>
-										<span>{element.fullName}</span>
-									</div>
-									<div>
-										<span>{element.email}</span>
-									</div>
+									<Link to={'/student_stat/' + element._id}>
+										<div>
+											<span>{element.fullName}</span>
+										</div>
+										<div>
+											<span>{element.email}</span>
+										</div>
+									</Link>
 								</div>
 								{/* <button className={style.btnDelete}>
 									<img src={deleteIcon} alt='delete student' />

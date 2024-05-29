@@ -11,9 +11,10 @@ import {
 import Cookies from 'js-cookie'
 import React, { useEffect, useState } from 'react'
 import { Bar } from 'react-chartjs-2'
-import { __VALUE__ } from '../../../conf.js'
+import { useParams } from 'react-router-dom'
+import { __VALUE__ } from '../../../../../../conf.js'
 
-const Statis = () => {
+const StatisStudent = () => {
 	ChartJS.register(
 		CategoryScale,
 		LinearScale,
@@ -23,16 +24,22 @@ const Statis = () => {
 		Legend
 	)
 	const [data2, setData2] = useState([])
-
+	const params = useParams()
+	console.log('params', params.id)
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
+				const Student_uuid = params.id
 				const token = Cookies.get('token')
-				const result = await axios.get(`${__VALUE__}/testing/all_tests`, {
-					headers: {
-						Authorization: `Bearer ${token}`,
-					},
-				})
+				const result = await axios.get(
+					`${__VALUE__}/testing/all_tests_teacher`,
+					{
+						headers: {
+							Authorization: `Bearer ${token}`,
+						},
+						params: { Student_uuid }, // Ensure params is an object
+					}
+				)
 
 				if (result.status === 200) {
 					setData2(result.data.result || []) // Ensure it's an array
@@ -43,7 +50,7 @@ const Statis = () => {
 			}
 		}
 		fetchData()
-	}, [])
+	}, [params.id])
 
 	// Check if data2 is an array before using .map()
 	const labels = Array.isArray(data2)
@@ -147,6 +154,9 @@ const Statis = () => {
 				display: 'flex',
 				justifyContent: 'center',
 				position: 'absolute',
+				top: '60%',
+				left: '50%',
+				transform: 'translate(-50%, -50%)',
 			}}
 		>
 			<Bar data={data} options={options} />
@@ -154,4 +164,4 @@ const Statis = () => {
 	)
 }
 
-export default Statis
+export default StatisStudent
