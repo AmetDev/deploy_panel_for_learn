@@ -55,9 +55,6 @@ const OurStudents = () => {
 										</div>
 									</Link>
 								</div>
-								{/* <button className={style.btnDelete}>
-									<img src={deleteIcon} alt='delete student' />
-								</button> */}
 							</div>
 						)
 					})}

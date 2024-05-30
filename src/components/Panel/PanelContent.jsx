@@ -2,7 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchMe } from '../../redux/slices/FetchUserTeacherSlice'
+
 import AddStudent from './IsAdmin/PanelPages/AddStudent'
+import Chat from './IsAdmin/PanelPages/Chat/Chat'
 import CreateLesson from './IsAdmin/PanelPages/CreateLesson'
 import CreateTest from './IsAdmin/PanelPages/CreateTest'
 import OurStudents from './IsAdmin/PanelPages/OurStudents'
@@ -29,6 +31,7 @@ const PanelContent = () => {
 				{pages.label === 'Ваши ученики' && <OurStudents />}
 				{pages.label === 'Добавить ученика' && <AddStudent />}
 				{pages.label === 'Убрать ученика' && <RemoveStudent />}
+				{pages.label === 'Чат' && <Chat />}
 			</div>
 		)
 	)

@@ -15,7 +15,7 @@ const MainPageParent = () => {
 						Authorization: `Bearer ${token}`,
 					},
 				})
-				console.log('studentdata', data)
+
 				setUser(data)
 			} catch (error) {
 				console.log(error)

@@ -16,7 +16,8 @@ import home2 from '../../../assets/panelAdmin/home2.svg'
 import question from '../../../assets/panelAdmin/question.svg'
 import question2 from '../../../assets/panelAdmin/question2.svg'
 import { setPage } from '../../../redux/slices/SelectedPageTeacherSlice'
-
+import chat from './../../../assets/panelAdmin/chat.svg'
+import chat1 from './../../../assets/panelAdmin/chatZero.svg'
 const PanelAdmin = () => {
 	const dispatch = useDispatch()
 	const [isDeleted, setIsDeleted] = useState(false)
@@ -30,6 +31,12 @@ const PanelAdmin = () => {
 			icon: addChild,
 			icon2: addChild2,
 			label: 'Добавить ученика',
+			state: false,
+		},
+		{
+			icon: chat1,
+			icon2: chat,
+			label: 'Чат',
 			state: false,
 		},
 	]

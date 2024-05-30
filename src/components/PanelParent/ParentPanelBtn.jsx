@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import style from './PanelAdmin.module.scss'
 
+import Cookies from 'js-cookie'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import day from '../../assets/day.svg'
 import addChild from '../../assets/panelAdmin/addChild.svg'
 import addChild2 from '../../assets/panelAdmin/addChild2.svg'
+import chart from '../../assets/panelAdmin/chart.svg'
+import chart2 from '../../assets/panelAdmin/chart2.svg'
+import iconChat from '../../assets/panelAdmin/chat.svg'
+import iconChat1 from '../../assets/panelAdmin/chatZero.svg'
 import childs from '../../assets/panelAdmin/childs.svg'
 import childs2 from '../../assets/panelAdmin/childs2.svg'
 import home from '../../assets/panelAdmin/home.svg'
 import home2 from '../../assets/panelAdmin/home2.svg'
-import chart from '../../assets/panelAdmin/chart.svg'
-import chart2 from '../../assets/panelAdmin/chart2.svg'
-import Cookies from 'js-cookie'
-import { Link } from 'react-router-dom'
 import { setPageParent } from '../../redux/slices/SelectedPageParentSlice.js'
 
 const ParentPanelBtn = () => {
@@ -27,7 +29,8 @@ const ParentPanelBtn = () => {
 			label: 'Добавить ребенка',
 			state: false,
 		},
-{ icon:  chart , icon2:  chart2, label: 'Статистика', state: false },
+		{ icon: chart, icon2: chart2, label: 'Статистика', state: false },
+		{ icon: iconChat1, icon2: iconChat, label: 'Чат', state: false },
 	]
 
 	const [buttons, setButtons] = useState(initialState)

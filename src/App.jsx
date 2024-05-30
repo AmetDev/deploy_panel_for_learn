@@ -3,6 +3,7 @@ import '../src/scss/index.scss'
 import MainLayouts from './Layouts/MainLayouts'
 import PrivateRoute from './Layouts/PrivateRoute'
 import Login from './components/Login/Login'
+import ChatId from './components/Panel/IsAdmin/PanelPages/Chat/[ChatId]/ChatId'
 import FullDataPage from './components/Panel/IsAdmin/PanelPages/PanelTeacher/[PanelTeacherId]/FullDataPage'
 import StatisStudent from './components/Panel/IsAdmin/PanelPages/PanelTeacher/[StatisStudentId]/StatisStudent'
 import TestList from './components/Panel/IsAdmin/PanelPages/TeststPage/TestsPage'
@@ -35,6 +36,7 @@ function App() {
 					<Route path='/TeacherPanel' element={<MainLayouts />} />
 					<Route path='/student_stat/:id' element={<StatisStudent />} />
 					<Route path='/TeacherPanel/tests' element={<TestList />} />
+					<Route path='/TeacherPanel/parent/:id' element={<ChatId />} />
 					<Route path='/TeacherPanel/tests/:id' element={<TestDetail />} />
 				</Route>
 				<Route path='/PanelTeacher/:id' element={<FullDataPage />} />
