@@ -3,6 +3,8 @@ import Cookies from 'js-cookie'
 import { useEffect, useRef, useState } from 'react'
 import { io } from 'socket.io-client'
 import { __VALUE_SEX__, __VALUE__ } from '../../../conf.js'
+import style from '../parentPage.module.scss'
+
 const ParentChat = () => {
 	const [id, setId] = useState(null)
 	const [socket, setSocket] = useState(null)
@@ -33,11 +35,11 @@ const ParentChat = () => {
 	}, [])
 	useEffect(() => {
 		if (id !== null) {
+			console.log('id', id)
 			const room = id
 			console.log(room)
 			if (room && socket) {
 				socket.emit('join-room', room)
-				displayMessage(`Joined room: ${room}`)
 			}
 		}
 	}, [id])
@@ -47,14 +49,6 @@ const ParentChat = () => {
 			auth: {
 				token: 'test',
 			},
-		})
-
-		newSocket.on('connect', () => {
-			displayMessage(`You connected with id: ${newSocket.id}`)
-		})
-
-		newSocket.on('connect_error', error => {
-			displayMessage(`Connection error: ${error.message}`)
 		})
 
 		newSocket.on('receive-message', message => {
@@ -72,6 +66,7 @@ const ParentChat = () => {
 
 	const handleFormSubmit = e => {
 		e.preventDefault()
+		console.log('work')
 		const message = messageInputRef.current.value
 		const room = id
 
@@ -86,17 +81,8 @@ const ParentChat = () => {
 		setMessage('')
 	}
 
-	// const handleJoinRoom = () => {
-	// 	const room = params.id
-	// 	console.log(room)
-	// 	if (room && socket) {
-	// 		socket.emit('join-room', room)
-	// 		displayMessage(`Joined room: ${room}`)
-	// 	}
-	// }
-
 	return (
-		<div>
+		<div className={style.wrapperParent}>
 			<div>
 				<ul>
 					{messages.map((msg, index) => (
@@ -104,9 +90,10 @@ const ParentChat = () => {
 					))}
 				</ul>
 			</div>
+
 			<form id='form' onSubmit={handleFormSubmit}>
 				<div>
-					<span>Message</span>
+					<span>Сообщение</span>
 					<input
 						type='text'
 						id='message-input'
@@ -114,16 +101,9 @@ const ParentChat = () => {
 						value={message}
 						onChange={e => setMessage(e.target.value)}
 					/>
-					<button type='submit'>Send</button>
+					<button type='submit'>Отправить</button>
 				</div>
 			</form>
-			<div>
-				<span>Room</span>
-				<input type='text' id='room-input' ref={roomInputRef} />
-				{/* <button type='button' onClick={handleJoinRoom}>
-					Join
-				</button> */}
-			</div>
 		</div>
 	)
 }

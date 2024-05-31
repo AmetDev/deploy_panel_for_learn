@@ -1,0 +1,11 @@
+.wrapperParent {
+	display: flex;
+	flex-direction: column-reverse;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #ffffff7c;
+	padding: 5px;
+	border-radius: 10px;
+}

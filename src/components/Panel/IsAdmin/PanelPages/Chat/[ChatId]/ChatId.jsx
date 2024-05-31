@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { io } from 'socket.io-client'
 import { __VALUE_SEX__ } from '../../../../../../conf.js'
+import style from './ChatId.module.scss'
 function ChatId() {
 	const [socket, setSocket] = useState(null)
 	const [message, setMessage] = useState('')
@@ -10,15 +11,6 @@ function ChatId() {
 	const messageInputRef = useRef(null)
 	const roomInputRef = useRef(null)
 	const params = useParams()
-	console.log(params)
-	useEffect(() => {
-		const room = params.id
-		console.log(room)
-		if (room && socket) {
-			socket.emit('join-room', room)
-			displayMessage(`Joined room: ${room}`)
-		}
-	}, [])
 
 	useEffect(() => {
 		const newSocket = io(`${__VALUE_SEX__}/user`, {
@@ -27,15 +19,8 @@ function ChatId() {
 			},
 		})
 
-		newSocket.on('connect', () => {
-			displayMessage(`You connected with id: ${newSocket.id}`)
-		})
-
-		newSocket.on('connect_error', error => {
-			displayMessage(`Connection error: ${error.message}`)
-		})
-
 		newSocket.on('receive-message', message => {
+			console.log('Received message:', message)
 			displayMessage(message)
 		})
 
@@ -43,6 +28,14 @@ function ChatId() {
 
 		return () => newSocket.close()
 	}, [])
+
+	useEffect(() => {
+		const room = params.id
+		if (room && socket) {
+			socket.emit('join-room', room)
+			// displayMessage(`Joined room: ${room}`)
+		}
+	}, [socket, params.id])
 
 	const displayMessage = message => {
 		setMessages(prevMessages => [...prevMessages, message])
@@ -64,17 +57,8 @@ function ChatId() {
 		setMessage('')
 	}
 
-	// const handleJoinRoom = () => {
-	// 	const room = params.id
-	// 	console.log(room)
-	// 	if (room && socket) {
-	// 		socket.emit('join-room', room)
-	// 		displayMessage(`Joined room: ${room}`)
-	// 	}
-	// }
-
 	return (
-		<div>
+		<div className={style.wrapperChatId}>
 			<div>
 				<ul>
 					{messages.map((msg, index) => (
@@ -84,7 +68,7 @@ function ChatId() {
 			</div>
 			<form id='form' onSubmit={handleFormSubmit}>
 				<div>
-					<span>Message</span>
+					<span>Сообщение</span>
 					<input
 						type='text'
 						id='message-input'
@@ -92,16 +76,9 @@ function ChatId() {
 						value={message}
 						onChange={e => setMessage(e.target.value)}
 					/>
-					<button type='submit'>Send</button>
+					<button type='submit'>Отправить</button>
 				</div>
 			</form>
-			<div>
-				<span>Room</span>
-				<input type='text' id='room-input' ref={roomInputRef} />
-				{/* <button type='button' onClick={handleJoinRoom}>
-					Join
-				</button> */}
-			</div>
 		</div>
 	)
 }

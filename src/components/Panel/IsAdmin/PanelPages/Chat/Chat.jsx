@@ -3,7 +3,7 @@ import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { __VALUE__ } from '../../../../../conf'
-
+import style from './Chat.module.scss'
 const Chat = () => {
 	const [idUser, setIdUser] = useState(null)
 	const [parents, setParents] = useState([])
@@ -93,14 +93,18 @@ const Chat = () => {
 			fetchData(element)
 		})
 	}, [parents])
-	console.log(parentData)
+
 	return (
-		<div>
+		<div className={style.wrapperElement}>
 			{parentData.length > 0 &&
 				parentData.map(element => {
 					return (
 						<div key={element._id}>
-							<Link to={`parent/${element._id}`}>{element.fullName}</Link>
+							<span>написать родителю:</span>
+							<h3>
+								{' '}
+								<Link to={`parent/${element._id}`}>{element.fullName}</Link>
+							</h3>
 						</div>
 					)
 				})}
