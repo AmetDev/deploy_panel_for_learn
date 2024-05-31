@@ -45,7 +45,7 @@ const ParentChat = () => {
 	}, [id])
 	console.log(id)
 	useEffect(() => {
-		const newSocket = io(`${__VALUE_SEX__}:4425/user`, {
+		const newSocket = io(`${__VALUE_SEX__}/user`, {
 			auth: {
 				token: 'test',
 			},
