@@ -13,7 +13,7 @@ function ChatId() {
 	const params = useParams()
 
 	useEffect(() => {
-		const newSocket = io(`${__VALUE_SEX__}/user`, {
+		const newSocket = io(`${__VALUE_SEX__}:4425/user`, {
 			auth: {
 				token: 'test',
 			},
